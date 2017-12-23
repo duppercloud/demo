@@ -1,11 +1,4 @@
-#!/bin/bash
-
-apk update
-apk add curl bash
-
 docker swarm init
-
-curl -sSL https://get.dupper.co | bash
 
 # Dup
 dupper dup --name mongodb dupper/mongodb
