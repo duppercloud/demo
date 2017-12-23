@@ -2,6 +2,6 @@ version: '2'
 
 services:
   demo:
-    build: .
+    image: dupper/demo
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
