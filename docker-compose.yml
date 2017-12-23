@@ -3,5 +3,5 @@ version: "3.2"
 services:
   demo:
     build: .
-  volumes:
-    - "/var/run/docker.sock:/var/run/docker.sock"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
