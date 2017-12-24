@@ -1,6 +1,9 @@
-FROM docker:17.11.0-ce
+FROM node:9
 
-RUN apk update && apk add curl bash
-RUN curl -sSL https://get.dupper.co | bash
+COPY ./package.json /
 
-ENTRYPOINT curl https://raw.githubusercontent.com/duppercloud/demo/master/start.sh | bash
+RUN npm install
+
+COPY ./app.js /
+CMD ["node","app.js"]
+
