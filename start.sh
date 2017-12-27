@@ -1,8 +1,8 @@
 docker swarm init
 
 # Dup
-dupper dup --name mongodb dupper/mongodb
-dupper dup --name config dupper/mongodb-config
+dupper dup --name mongodb --mount="type=volume,volume-driver=local,destination=/var/lib/mongodb" dupper/mongodb
+dupper dup --name config --mount="type=volume,volume-driver=local,destination=/var/lib/mongo-metadata" dupper/mongodb-config
 dupper dup --name query dupper/mongodb-query
 
 # Connect Cluster

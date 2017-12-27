@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
             console.log(res)
             client.close();
           });
-          return res.send(util.format("Hello from %s. This website is visited by %s times", process.env.HOSTNAME, count.toString()));
+          return res.send(util.format("Hello from %s. This website is visited by %s times\n", process.env.HOSTNAME, count.toString()));
       });
     });
 })
@@ -28,7 +28,7 @@ app.get('/', function(req, res) {
 MongoClient.connect(url, function(err, client) {
   if (err) return console.log(err);
         
-  var myobj = { user: 1234, count: 0 };
+  var myobj = { user: 1234, count: 1 };
   db = client.db("visits")
   db.collection("users").insertOne(myobj, function(err, res) {
     if (err) return console.log(err);
